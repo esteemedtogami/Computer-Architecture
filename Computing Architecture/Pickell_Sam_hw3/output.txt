@@ -1,0 +1,66 @@
+/******************************
+Author: Sam Pickell
+Date: 10/5/2017
+Filename: output.txt
+*****************************/
+
+Annotations in ()
+
+[spickell@mercury Pickell_Sam_hw3]$ ./mic1 prom.dat rfib.obj 0 3000
+Read in 81 micro instructions
+Read in 116 machine instructions
+Starting PC is : 0000000000000000  base 10:       0
+Starting SP is : 0000101110111000  base 10:    3000
+
+
+ProgramCounter : 0000000000100100  base 10:      36
+Accumulator    : 0000000000000000  base 10:       0
+InstructionReg : 1111111100000000  base 10:   65280
+TempInstr      : 1000000000000000  base 10:   32768
+StackPointer   : 0000101110111000  base 10:    3000
+ARegister      : 0000000000000001  base 10:       1
+BRegister      : 0000000000000000  base 10:       0
+CRegister      : 0000000000000000  base 10:       0
+DRegister      : 0000000000000000  base 10:       0
+ERegister      : 0000000000000000  base 10:       0
+FRegister      : 0000000000000000  base 10:       0
+
+Total cycles   : 35109454
+
+Type decimal address to view memory,  q  to quit or  c  to continue: 99
+     the location   99 has value 1111111111111111 , or 65535  or signed     -1
+
+(The 99 enetered here is for the .LOC 100, we jump down to 100 because all
+   of the relevant data is stored here)
+
+Type  <Enter>  to continue debugging
+Type        q  to quit
+Type        f for forward range
+Type        b for backward range: f
+Type the number of forward locations to dump: 12
+     the location  100 has value 0000000000000011 , or     3  or signed      3
+(our first fib number)
+     the location  101 has value 0000000000001001 , or     9  or signed      9
+(our second fib number)
+     the location  102 has value 0000000000010010 , or    18  or signed     18
+(our third fib number)
+     the location  103 has value 0000000000010111 , or    23  or signed     23
+(our fourth fib number)
+     the location  104 has value 0000000000011001 , or    25  or signed     25
+(our fifth fib number)
+     the location  105 has value 0000000000000010 , or     2  or signed      2
+(the fib of 3)
+     the location  106 has value 0000000000100010 , or    34  or signed     34
+(the fib of 9)
+     the location  107 has value 0000101000011000 , or  2584  or signed   2584
+(the fib of 18)
+     the location  108 has value 0110111111110001 , or 28657  or signed  28657
+(the fib of 23)
+     the location  109 has value 0010010100010001 , or  9489  or signed   9489
+(the fib of 25... kind of. The largest number that can be stored in this
+  architecture is 32k. So the real fib of 25 is 32k + 32k + 9489 = 75025)
+
+     the location  110 has value 0000000001101001 , or   105  or signed    105
+     the location  111 has value 0000000001101110 , or   110  or signed    110
+Type decimal address to view memory,  q  to quit or  c  to continue: q
+MIC-1 emulator finishing, goodbye

@@ -1,0 +1,13 @@
+Author: Sam Pickell                                                             
+Date: September 24, 2017                                                        
+Filename: program2                                                              
+email: samuel_pickell@student.uml.edu
+
+I feel as though I was 95% successful with this project. All emulated output
+results match hardware results for the inputs provided on the website
+except for the last two numbers: 25e37 and 15e37. I realize the hardware is
+supposed to output "inf" but I can't seem to figure out why my result
+isn't 4e38. Otherwise using Professor Moloney's class code as a base, I
+finished the code for determining the shift, the final mantissa result,
+figuring out if the hidden bit was on or not and displaying the final
+result.

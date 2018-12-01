@@ -1,0 +1,18 @@
+Author: Sam Pickell
+Date: September 13, 2017
+Filename: program1
+Email: samuel_pickell@student.uml.edu
+
+I believe I was 99% successful with this program. Using Professor Moloney's
+class code as a base and then using C++ from there, I used the bit_string 
+array to display the necessary binary information in my output, and made
+sure that that was working. Next I worked on formatting my output so that
+it matched that of Professor Moloney. Finally, and this is where I believe
+I was 1% unsuccessful, I took the information in bit_string and put that
+information into separate strings and manually converted the binary into
+hexadecimal and stored the result in a string. The reason I think I was
+1% unsuccessful is I never utilized exponenet and mantissa in the
+f_bits structure. I couldn't figure out a way to utilize them and found 
+that to me the string method was a bit clearer, although a little time
+consuming. From what I've tested and displayed in output_file.txt, however,
+the program seems to work as intended.

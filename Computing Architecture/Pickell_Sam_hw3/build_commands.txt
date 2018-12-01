@@ -1,0 +1,13 @@
+/*************************
+Author:   Sam Pickell
+Date:     10/5/17
+Filename: build_commands.txt
+*************************/
+
+To build the asm and make an obj:
+
+./masm < rfib.asm > rfib.obj
+
+
+To run the obj with prom and mic1 (and two addresses):
+./mic1 prom.dat rfib.obj 0 3000

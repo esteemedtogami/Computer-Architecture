@@ -1,0 +1,286 @@
+/*******************************
+Author: Sam Pickell
+Date: September 13, 2017
+Filename: program1
+Description: This is my program
+1 that uses the class code as
+a base. This program asks the
+user for a floating point number
+and then converts it to both
+binary and hexidecimal, as well
+as displays what parts indicate
+sign, exponent, and mantissa.
+*******************************/
+
+#include <stdio.h>
+#include <iostream>
+#include <string>
+#include <cstdlib>
+
+std::string to_hex(std::string my_string);
+
+int main(int argc, char * argv[])
+{
+
+  union float_32
+    {
+        float   floating_value_in_32_bits;
+        int     floating_value_as_int;
+        struct  sign_exp_mantissa
+	{
+                unsigned  mantissa:23;
+                unsigned  exponent:8;
+                unsigned      sign:1;
+        } f_bits;
+	struct single_bits
+	{
+		unsigned  b0 :1;
+		unsigned  b1 :1;
+		unsigned  b2 :1;
+		unsigned  b3 :1;
+		unsigned  b4 :1;
+		unsigned  b5 :1;
+		unsigned  b6 :1;
+		unsigned  b7 :1;
+		unsigned  b8 :1;
+		unsigned  b9 :1;
+		unsigned  b10:1;
+		unsigned  b11:1;
+		unsigned  b12:1;
+		unsigned  b13:1;
+		unsigned  b14:1;
+		unsigned  b15:1;
+		unsigned  b16:1;
+		unsigned  b17:1;
+		unsigned  b18:1;
+		unsigned  b19:1;
+		unsigned  b20:1;
+		unsigned  b21:1;
+		unsigned  b22:1;
+		unsigned  b23:1;
+		unsigned  b24:1;
+		unsigned  b25:1;
+		unsigned  b26:1;
+		unsigned  b27:1;
+		unsigned  b28:1;
+		unsigned  b29:1;
+		unsigned  b30:1;
+		unsigned  b31:1;
+	}bit;
+    } float_32;
+ 
+char bit_string[43];
+ int i;
+ std::string s_mantissa = "0", s_exponent, f_mantissa, f_exponent;
+ 
+
+for(i=0; i<42; i++)
+  {
+	bit_string[i] = ' ';
+  }
+bit_string[42] = '\0';
+
+printf("please enter a floating point number and new-line: ");
+scanf("%g", &float_32.floating_value_in_32_bits);
+
+bit_string[0] = float_32.bit.b31?'1':'0';
+
+bit_string[2] = float_32.bit.b30?'1':'0';
+bit_string[3] = float_32.bit.b29?'1':'0';
+bit_string[4] = float_32.bit.b28?'1':'0';
+bit_string[5] = float_32.bit.b27?'1':'0';
+
+bit_string[7] = float_32.bit.b26?'1':'0';
+bit_string[8] = float_32.bit.b25?'1':'0';
+bit_string[9] = float_32.bit.b24?'1':'0';
+bit_string[10] = float_32.bit.b23?'1':'0';
+
+bit_string[12] = float_32.bit.b22?'1':'0';
+bit_string[13] = float_32.bit.b21?'1':'0';
+bit_string[14] = float_32.bit.b20?'1':'0';
+
+bit_string[16] = float_32.bit.b19?'1':'0';
+bit_string[17] = float_32.bit.b18?'1':'0';
+bit_string[18] = float_32.bit.b17?'1':'0';
+bit_string[19] = float_32.bit.b16?'1':'0';
+
+bit_string[21] = float_32.bit.b15?'1':'0';
+bit_string[22] = float_32.bit.b14?'1':'0';
+bit_string[23] = float_32.bit.b13?'1':'0';
+bit_string[24] = float_32.bit.b12?'1':'0';
+
+bit_string[26] = float_32.bit.b11?'1':'0';
+bit_string[27] = float_32.bit.b10?'1':'0';
+bit_string[28] = float_32.bit.b9?'1':'0';
+bit_string[29] = float_32.bit.b8?'1':'0';
+
+bit_string[31] = float_32.bit.b7?'1':'0';
+bit_string[32] = float_32.bit.b6?'1':'0';
+bit_string[33] = float_32.bit.b5?'1':'0';
+bit_string[34] = float_32.bit.b4?'1':'0';
+
+bit_string[36] = float_32.bit.b3?'1':'0';
+bit_string[37] = float_32.bit.b2?'1':'0';
+bit_string[38] = float_32.bit.b1?'1':'0';
+bit_string[39] = float_32.bit.b0?'1':'0';
+
+//Start output
+ std::cout << "The floating value for " << float_32.floating_value_in_32_bits
+	   << " is broken out as: " << std::endl;
+
+ //output mantissa
+ for (int q = 11; q <= 39; q++)
+   {
+     if(bit_string[q] == ' ')
+       {
+
+       }
+     else
+       {
+	 s_mantissa.push_back(bit_string[q]);
+       }
+   }
+ f_mantissa = to_hex(s_mantissa);
+ std::cout << "  mantissa:      ";
+ std::cout << "0x";
+ std::cout.width(15);
+ std::cout << std::left << f_mantissa;
+ std::cout << "or:            ";
+ for (int q = 11; q <= 39; q++)
+   {
+     std::cout << bit_string[q];
+   }
+ std::cout << std::endl;
+
+ //output exponent
+  for (int q = 2; q <= 10; q++)
+   {
+      if(bit_string[q] == ' ')
+       {
+
+       }
+     else
+       {
+	 s_exponent.push_back(bit_string[q]);
+       }
+   }
+ f_exponent = to_hex(s_exponent);
+ std::cout << "  exponent:      ";
+ std::cout << "0x";
+ std::cout.width(15);
+ std::cout << std::left << f_exponent;
+ std::cout << "or:   ";
+   for (int q = 2; q <= 10; q++)
+   {
+     std::cout << bit_string[q];
+   }
+ std::cout << std::endl;
+
+  //output sign
+ float_32.f_bits.sign = bit_string[0];
+ std::cout << "      sign:      ";
+ std::cout << "0x";
+ std::cout.width(15);
+ std::cout << std::left << float_32.f_bits.sign;
+ std::cout << "or: ";
+ std::cout << float_32.f_bits.sign;
+ std::cout << std::endl;
+ 
+ //output base 10
+ std::cout << "in base 10:      ";
+ std::cout.width(17);
+ std::cout << std::left << float_32.floating_value_in_32_bits;
+ std::cout << "or: ";
+ std::cout << bit_string << std::endl;
+}
+
+std::string to_hex(std::string my_string)
+{
+  std::string final_string, temp_string;
+  int count = 0;
+
+  for (unsigned int q = 0; q < my_string.length(); q++)
+    {
+      temp_string.push_back(my_string.at(q));
+      count ++;
+      if (count == 4)
+	{
+	  //all the ifs
+	  if (temp_string == "0000")
+	    {
+	      final_string.push_back('0');
+	    }
+	  else if (temp_string == "0001")
+	    {
+	      final_string.push_back('1');
+	    }
+	  else if (temp_string == "0010")
+	    {
+	      final_string.push_back('2');
+	    }
+	  else if (temp_string == "0011")
+	    {
+	      final_string.push_back('3');
+	    }
+	  else if (temp_string == "0100")
+	    {
+	      final_string.push_back('4');
+	    }
+	  else if (temp_string == "0101")
+	    {
+	      final_string.push_back('5');
+	    }
+	  else if (temp_string == "0110")
+	    {
+	      final_string.push_back('6');
+	    }
+	  else if (temp_string == "0111")
+	    {
+	      final_string.push_back('7');
+	    }
+	  else if (temp_string == "1000")
+	    {
+	      final_string.push_back('8');
+	    }
+	  else if (temp_string == "1001")
+	    {
+	      final_string.push_back('9');
+	    }
+	  else if (temp_string == "1010")
+	    {
+	      final_string.push_back('A');
+	    }
+	  else if (temp_string == "1011")
+	    {
+	      final_string.push_back('B');
+	    }
+	  else if (temp_string == "1100")
+	    {
+	      final_string.push_back('C');
+	    }
+	  else if (temp_string == "1101")
+	    {
+	      final_string.push_back('D');
+	    }
+	  else if (temp_string == "1110")
+	    {
+	      final_string.push_back('E');
+	    }
+	  else if (temp_string == "1111")
+	    {
+	      final_string.push_back('F');
+	    }
+	  else
+	    {
+	      std::cout << "A serious error occurred in function to_hex." <<
+		std::endl;
+	      exit(1);
+	    }
+	  //
+	  temp_string.erase(0,4);
+	  count = 0;
+	}
+    }
+
+  return final_string;
+}

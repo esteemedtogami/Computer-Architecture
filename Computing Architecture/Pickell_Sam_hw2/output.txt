@@ -1,0 +1,172 @@
+Author: Sam Pickell                                                             
+Date: September 24, 2017                                                        
+Filename: program2                                                              
+Description: This is my finished program 2 as 
+started by Professor Moloney in class. This
+program takes two floats and breaks them down
+into their binary components, and manually adds
+them together by determining which number is
+larger, shifting accordingly to get the proper
+exponenet, and finally adding together the
+mantissas and displaying the final result.
+
+******************************************************************************
+This program will emulate the addition of two IEEE 754 floating point numbers
+Please enter two positive floating point values each with: 
+    - no more than 6 significant digits
+    - a value between   +   10**37 and 10**-37
+
+Enter Float 1: 34.5
+Enter Float 2: 1.25
+
+Original pattern of Float 1:      0 1000 0100 000 1010 0000 0000 0000 0000  
+Original pattern of Float 2:      0 0111 1111 010 0000 0000 0000 0000 0000  
+
+Mantissa s1 w/ hidden bit:                  1 000 1010 0000 0000 0000 0000  
+Mantissa s2 w/ hidden bit:                  1 010 0000 0000 0000 0000 0000  
+
+Mantissa s1 post shift:                     1 000 1010 0000 0000 0000 0000  
+Mantissa s2 post shift:                     0 000 0101 0000 0000 0000 0000  
+
+Bit sums before adjustment:                 1 000 1111 0000 0000 0000 0000  
+Final 23 bit pattern for result:              000 1111 0000 0000 0000 0000  
+
+Bit pattern of result:            0 1000 0100 000 1111 0000 0000 0000 0000  
+
+Emulated result from std::cout: 35.75
+Hardware result from std::cout: 35.75
+******************************************************************************
+******************************************************************************
+This program will emulate the addition of two IEEE 754 floating point numbers
+Please enter two positive floating point values each with: 
+    - no more than 6 significant digits
+    - a value between   +   10**37 and 10**-37
+
+Enter Float 1: 2.75e3
+Enter Float 2: 256.0
+
+Original pattern of Float 1:      0 1000 1010 010 1011 1110 0000 0000 0000  
+Original pattern of Float 2:      0 1000 0111 000 0000 0000 0000 0000 0000  
+
+Mantissa s1 w/ hidden bit:                  1 010 1011 1110 0000 0000 0000  
+Mantissa s2 w/ hidden bit:                  1 000 0000 0000 0000 0000 0000  
+
+Mantissa s1 post shift:                     1 010 1011 1110 0000 0000 0000  
+Mantissa s2 post shift:                     0 001 0000 0000 0000 0000 0000  
+
+Bit sums before adjustment:                 1 011 1011 1110 0000 0000 0000  
+Final 23 bit pattern for result:              011 1011 1110 0000 0000 0000  
+
+Bit pattern of result:            0 1000 1010 011 1011 1110 0000 0000 0000  
+
+Emulated result from std::cout: 3006
+Hardware result from std::cout: 3006
+******************************************************************************
+******************************************************************************
+This program will emulate the addition of two IEEE 754 floating point numbers
+Please enter two positive floating point values each with: 
+    - no more than 6 significant digits
+    - a value between   +   10**37 and 10**-37
+
+Enter Float 1: 1.4e-3
+Enter Float 2: 13.0
+
+Original pattern of Float 1:      0 0111 0101 011 0111 1000 0000 0011 0100  
+Original pattern of Float 2:      0 1000 0010 101 0000 0000 0000 0000 0000  
+
+Mantissa s1 w/ hidden bit:                  1 011 0111 1000 0000 0011 0100  
+Mantissa s2 w/ hidden bit:                  1 101 0000 0000 0000 0000 0000  
+
+Mantissa s1 post shift:                     0 000 0000 0000 0101 1011 1100  
+Mantissa s2 post shift:                     1 101 0000 0000 0000 0000 0000  
+
+Bit sums before adjustment:                 1 101 0000 0000 0101 1011 1100  
+Final 23 bit pattern for result:              101 0000 0000 0101 1011 1100  
+
+Bit pattern of result:            0 1000 0010 101 0000 0000 0101 1011 1100  
+
+Emulated result from std::cout: 13.0014
+Hardware result from std::cout: 13.0014
+******************************************************************************
+******************************************************************************
+This program will emulate the addition of two IEEE 754 floating point numbers
+Please enter two positive floating point values each with: 
+    - no more than 6 significant digits
+    - a value between   +   10**37 and 10**-37
+
+Enter Float 1: 7.491
+Enter Float 2: 4.617e20
+
+Original pattern of Float 1:      0 1000 0001 110 1111 1011 0110 0100 0110  
+Original pattern of Float 2:      0 1100 0011 100 1000 0011 1010 1111 1111  
+
+Mantissa s1 w/ hidden bit:                  1 110 1111 1011 0110 0100 0110  
+Mantissa s2 w/ hidden bit:                  1 100 1000 0011 1010 1111 1111  
+
+Mantissa s1 post shift:                     0 000 0000 0000 0000 0000 0000  
+Mantissa s2 post shift:                     1 100 1000 0011 1010 1111 1111  
+
+Bit sums before adjustment:                 1 100 1000 0011 1010 1111 1111  
+Final 23 bit pattern for result:              100 1000 0011 1010 1111 1111  
+
+Bit pattern of result:            0 1100 0011 100 1000 0011 1010 1111 1111  
+
+Emulated result from std::cout: 4.617e+20
+Hardware result from std::cout: 4.617e+20
+******************************************************************************
+******************************************************************************
+This program will emulate the addition of two IEEE 754 floating point numbers
+Please enter two positive floating point values each with: 
+    - no more than 6 significant digits
+    - a value between   +   10**37 and 10**-37
+
+Enter Float 1: 9643.0
+Enter Float 2: 1.237e-2
+
+Original pattern of Float 1:      0 1000 1100 001 0110 1010 1100 0000 0000  
+Original pattern of Float 2:      0 0111 1000 100 1010 1010 1011 1000 1010  
+
+Mantissa s1 w/ hidden bit:                  1 001 0110 1010 1100 0000 0000  
+Mantissa s2 w/ hidden bit:                  1 100 1010 1010 1011 1000 1010  
+
+Mantissa s1 post shift:                     1 001 0110 1010 1100 0000 0000  
+Mantissa s2 post shift:                     0 000 0000 0000 0000 0000 1100  
+
+Bit sums before adjustment:                 1 001 0110 1010 1100 0000 1100  
+Final 23 bit pattern for result:              001 0110 1010 1100 0000 1100  
+
+Bit pattern of result:            0 1000 1100 001 0110 1010 1100 0000 1100  
+
+Emulated result from std::cout: 9643.01
+Hardware result from std::cout: 9643.01
+******************************************************************************
+******************************************************************************
+This program will emulate the addition of two IEEE 754 floating point numbers
+Please enter two positive floating point values each with: 
+    - no more than 6 significant digits
+    - a value between   +   10**37 and 10**-37
+
+Enter Float 1: 25e37
+Enter Float 2: 15e37
+
+Original pattern of Float 1:      0 1111 1110 011 1100 0001 0100 0100 0000  
+Original pattern of Float 2:      0 1111 1101 110 0001 1011 0001 1110 0110  
+
+Mantissa s1 w/ hidden bit:                  1 011 1100 0001 0100 0100 0000  
+Mantissa s2 w/ hidden bit:                  1 110 0001 1011 0001 1110 0110  
+
+Mantissa s1 post shift:                     1 011 1100 0001 0100 0100 0000  
+Mantissa s2 post shift:                     0 111 0000 1101 1000 1111 0011  
+
+Bit sums before adjustment:                 0 010 1100 1110 1101 0011 0011  
+Final 23 bit pattern for result:              010 1100 1110 1101 0011 0011  
+
+Bit pattern of result:            0 1111 1110 010 1100 1110 1101 0011 0011  
+
+Emulated result from std::cout: 2.29859e+38
+Hardware result from std::cout: inf
+******************************************************************************
+
+
+
+

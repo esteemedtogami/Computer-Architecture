@@ -1,0 +1,14 @@
+/*****************************************
+Author:   Sam Pickell
+Date:     10/5/17
+Filename: write-up.txt
+Email: samuel_pickell@student.uml.edu
+*****************************************/
+
+I believe I was 100% successful with this program. Using Professor
+Moloney's class code as a base, I changed the Fib function from a
+iterative solution to a recursive solution. The hardest part was
+translating the C code "fn1 = rfib(n-1)" but after keeping track
+of how things were being placed on the stack and being able to
+increment the stack pointer to move around as needed, managing 
+temporary data became clearer.
