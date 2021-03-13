@@ -1,0 +1,17 @@
+/**********************
+Author: Sam Pickell
+Date: 11/29/2017
+Filename: write-up.txt
+email: samuel_pickell@student.uml.edu
+*********************/
+
+
+I feel as though I was 90% successful with this program. Using the
+code Professor Moloney gave in class, I was able to make a linker
+in C that linked together a series of assembly level functions into
+a single program. The linker portion of this assignment works as intended
+as far as my testing has gone. The reason I feel that I was 90% successful
+and not 100% is because I didn't get assignment 5 to work properly, so
+as a result my functions are incorrect. Therefore I was not able to
+extensively test this program. However, the linker appears to work as
+evident by my consolidated object file.

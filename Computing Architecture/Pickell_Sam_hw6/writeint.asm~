@@ -1,0 +1,10 @@
+writeint:	lodd on2:
+		stod 4095
+		lodl 1
+		stod 4094
+		call xbsywt:
+		retn
+	
+on2:		8
+nl:		10
+cr:		13

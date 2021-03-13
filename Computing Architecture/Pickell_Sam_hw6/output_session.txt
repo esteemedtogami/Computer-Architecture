@@ -1,0 +1,51 @@
+/**********************
+Author: Sam Pickell
+Date: 11/29/2017
+Filename: output_session.txt
+*********************/
+
+Read in 152 micro instructions
+Read in 128 machine instructions
+Starting PC is : 0000000000000000  base 10:       0
+Starting SP is : 0000010000000000  base 10:    1024
+
+
+ProgramCounter : 0000010000000001  base 10:    1025
+Accumulator    : 1111111111111111  base 10:   65535
+InstructionReg : 1111111111111111  base 10:   65535
+TempInstr      : 1111111000000000  base 10:   65024
+StackPointer   : 0000000001010111  base 10:      87
+ARegister      : 1  base 10:   32768
+BRegister      : 0000000000000000  base 10:       0
+CRegister      : 0000000000000000  base 10:       0
+DRegister      : 0000000000000000  base 10:       0
+ERegister      : 0000000000000000  base 10:       0
+FRegister      : 0000000000000000  base 10:       0
+
+Total cycles   : 24672
+
+Type decimal address to view memory,  q  to quit or  c  to continue: q
+MIC-1 emulator finishing, goodbye
+Read in 152 micro instructions
+Read in 128 machine instructions
+Starting PC is : 0000000000000000  base 10:       0
+Starting SP is : 0000010000000000  base 10:    1024
+
+
+ProgramCounter : 0000010000000001  base 10:    1025
+Accumulator    : 1111111111111111  base 10:   65535
+InstructionReg : 1111111111111111  base 10:   65535
+TempInstr      : 1111111000000000  base 10:   65024
+StackPointer   : 0000000001010111  base 10:      87
+ARegister      : 1  base 10:   32768
+BRegister      : 0000000000000000  base 10:       0
+CRegister      : 0000000000000000  base 10:       0
+DRegister      : 0000000000000000  base 10:       0
+ERegister      : 0000000000000000  base 10:       0
+FRegister      : 0000000000000000  base 10:       0
+
+Total cycles   : 24672
+
+Type decimal address to view memory,  q  to quit or  c  to continue: q
+MIC-1 emulator finishing, goodbye
+
