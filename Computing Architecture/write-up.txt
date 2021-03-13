@@ -1,0 +1,17 @@
+/***************************************
+Author: Sam Pickell
+Date: October 24, 2017
+Filename: write-up.txt
+email: samuel_pickell@student.uml.edu
+***************************************/
+
+I think that I was 70% successful with this project. After spending many
+hours working on the project and rewatching the lectures that explained
+the project, I was not able to get it to work. However, I do think my
+logic made sense and my commented prom file helps walkthrough my thought
+process. Neither prom nor masm successfully compiled, and their 
+errors are displayed in my output.txt file. I think the edits I made to the
+mic1symasm_nand_rshift.c and ll files were logical and straightforward. So
+even though prom nor masm compiled, I did put a lot of time and effort into
+this program, and prom does contain the rshift as discussed in class and
+my attempts at mult and div.

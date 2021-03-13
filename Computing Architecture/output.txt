@@ -1,0 +1,26 @@
+/*********************************
+Author: Sam Pickell
+Date: October 24, 2017
+Filename: output.txt
+*********************************/
+
+Prom error output:
+-------------------------------------------------------------------------------
+Microcode Compiler - Version 1.0 - Richard Boccuzzi
+
+ 112:110:c := 0; ac := 0;                       { c = quotient, ac = 0 because 
+                     ^
+Error, reseting C bus to new value
+--------------------------------------------------------------------------------
+masm error output:
+--------------------------------------------------------------------------------
+gcc -c -g mic1symasm_nand_rshift.c
+flex mic1symasm_nand_rshift.ll
+gcc -c -g lex.yy.c
+gcc -o masm_nr mic1symasm_nand_rshift.o lex.yy.o
+mic1symasm_nand_rshift.o: In function `main':
+/usr/cs/2019/spickell/Fall2017/Computer Architecture/Pickell_Sam_hw4/mic1symasm_nand_rshift.c:378: undefined reference to `bstr_16'
+/usr/cs/2019/spickell/Fall2017/Computer Architecture/Pickell_Sam_hw4/mic1symasm_nand_rshift.c:386: undefined reference to `bstr_16'
+collect2: ld returned 1 exit status
+make: *** [masm_nr] Error 1
+--------------------------------------------------------------------------------
