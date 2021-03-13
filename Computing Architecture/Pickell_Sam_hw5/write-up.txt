@@ -1,0 +1,14 @@
+/***************************************
+Author: Sam Pickell
+Date: November 7, 2017
+Filename: write-up.txt
+email: samuel_pickell@student.uml.edu
+**************************************/
+
+I feel as though I was 70% successful with this project.
+I was not able to figure out how to print to the screen
+using mic1 architecture, so I was not able to see if
+my added functions worked. I did comment nearly every
+line that I added unless it was duplicated or self 
+explainitory, so hopefully it is easy to at least follow 
+my logic throughout the program.

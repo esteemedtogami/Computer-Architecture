@@ -1,0 +1,13 @@
+/****************************
+Author:	Sam Pickell
+Date: November 7, 2017
+Filename: make.txt
+****************************/
+
+In order to run this program, first turn the .asm into a .obj:
+./masm_mrd <scan_two_numbers.asm> scan_two_numbers.obj
+
+After the .obj is created, the program can be run by typing:
+./mic1 prom_mrd.dat scan_two_numbers.obj 0 3000
+
+where the 3000 is an arbitrary number

@@ -1,0 +1,52 @@
+/****************************
+Author: Sam Pickell
+Date: November 7, 2017
+Filename: output.txt
+****************************/
+
+*******************************************************
+Read in 152 micro instructions
+Read in 215 machine instructions
+Starting PC is : 0000000000000000  base 10:       0
+Starting SP is : 0000101110111000  base 10:    3000
+
+Please enter a 1-5 digit number followed by enter
+100
+Please enter a 1-5 digit number followed by enter
+100
+
+ProgramCounter : 0000000010001111  base 10:     143
+Accumulator    : 0000000010011101  base 10:     157
+InstructionReg : 1111111111000000  base 10:   65472
+TempInstr      : 1000000000000000  base 10:   32768
+StackPointer   : 0000101110110110  base 10:    2998
+ARegister      : 1111111111110101  base 10:   65525
+BRegister      : 1111111111111111  base 10:   65535
+CRegister      : 0000000000000000  base 10:       0
+DRegister      : 0000000001100100  base 10:     100
+ERegister      : 0000000000000000  base 10:       0
+FRegister      : 0000000000000000  base 10:       0
+
+Total cycles   : 248211
+
+Type decimal address to view memory,  q  to quit or  c  to continue: c
+
+The new PC is  : 0000000010001111
+
+
+ProgramCounter : 0000110001010001  base 10:    3153
+Accumulator    : 0000111111111111  base 10:    4095
+InstructionReg : 1111111111111111  base 10:   65535
+TempInstr      : 1111111000000000  base 10:   65024
+StackPointer   : 0000101110110110  base 10:    2998
+ARegister      : 1111111111110101  base 10:   65525
+BRegister      : 1111111111111111  base 10:   65535
+CRegister      : 0000000000000000  base 10:       0
+DRegister      : 0000000001100100  base 10:     100
+ERegister      : 0000000000000000  base 10:       0
+FRegister      : 0000000000000000  base 10:       0
+
+Total cycles   : 248400
+
+Type decimal address to view memory,  q  to quit or  c  to continue: q
+MIC-1 emulator finishing, goodbye
