@@ -1,0 +1,41 @@
+/***************************
+Author: Sam Pickell
+Filename: output.txt
+Date: December 12, 2017
+Email: samuel_pickell@student.uml.edu
+***************************/
+
+The output of the program showing a parent 
+and child thread:
+
+********************************************
+This is the Parent process report:
+
+PARENT PROG:  Process ID is:		30560
+PARENT PROC:  Process parent ID is:	15106
+PARENT PROC:  Real UID is:   		14548
+PARENT PROC:  Real GID is:		2019
+PARENT PROC:  Effective UID is:		14548
+PARENT PROC:  Effective GID is:		2019
+PARENT PROC:  Process priority is:	0
+
+PARENT PROC: will now create child, write pipe,
+ and do a normal termination
+PARENT: Created child with PID 30563 
+
+This is the child process report:
+
+CHILD PROG:  Process ID is:		30563
+CHILD PROC:  Process parent ID is:	30560
+CHILD PROC:  Real UID is:      		14548
+CHILD PROC:  Real GID is:		2019
+CHILD PROC:  Effective UID is:		14548
+CHILD PROC:  Effective GID is:		2019
+CHILD PROC:  Process priority is:	0
+
+CHILD PROC: will now read pipe and report parent message:
+CHILD PROC: parent's msg is I was the parent and my PID is: 30560
+
+[spickell@mercury Pickell_Sam_hw7]$ CHILD PROC: Process parent ID now is: 1
+CHILD PROC: ### Goodbye ###
+***********************************************************************
